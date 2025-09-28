@@ -17,7 +17,7 @@ const Navbar = () => {
             {/* logo and menu */}
             <div className='lg:w-[50%] h-full flex items-center justify-between pr-16'>
                 {/* logo */}
-                <a href="/home" className='h-full '>
+                <a href="/" className='h-full '>
                     <img src={logo} className='w-[80px] lg:w-[100px] h-full lg:py-3 py-4 ' alt="logo" />
                 </a>
                 {/* menu */}

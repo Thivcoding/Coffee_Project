@@ -1,5 +1,6 @@
 import React from 'react'
 import { categories } from '../../Data'
+import { Link } from 'react-router-dom'
 
 const Category = () => {
   return (
@@ -14,7 +15,7 @@ const Category = () => {
         >
             {/* card */}
             {categories.map((cate)=>(
-                <div className='w-full md:w-[48%] bg-white lg:w-[23%] h-[450px] overflow-hidden rounded-md shadow shadow-black'>
+                <div key={cate.id} className='w-full md:w-[48%] bg-white lg:w-[23%] h-[450px] overflow-hidden rounded-md shadow shadow-black'>
                     {/* card-header */}
                     <div className='w-full h-[65%] p-2 border-b border-gray-400 bg-green-500'>
                         <img className='w-full h-full bg-red-200 rounded-md' src={cate.imageUrl} alt="image" />
@@ -22,10 +23,10 @@ const Category = () => {
                     {/* card-detail */}
                     <div className='w-full h-[35%] p-2'>
                         <h1 className='text-2xl font-bold'>{cate.name}</h1>
-                        <p className=' py-3 lg:py-2'>{cate.description}</p>
+                        <p className=' py-3 mb-2 lg:py-2'>{cate.description}</p>
                     
-                        <button className='bg-blue-500 px-5 py-2 cursor-pointer hover:bg-pink-500
-                        transition-all duration-300 ease-in-out text-white rounded-md'>View More</button>
+                        <Link to={cate.link} className='bg-blue-500 px-5 py-2 cursor-pointer hover:bg-pink-500
+                        transition-all duration-300 ease-in-out text-white rounded-md'>View More</Link>
 
                     </div>
                 </div>
